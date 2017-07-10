@@ -1,0 +1,20 @@
+{
+  "name": "card-sample-hello-world",
+  "homepage": "https://github.com/ChannelElementsTeam/card-sample-hello-world",
+  "authors": [
+    "Kingston Duffie <kduffie@hivepoint.com>"
+  ],
+  "description": "A sample-only Channels card components demonstrating 'hello world'",
+  "main": "card-sample-hello-world.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "polymer": "^2.0.1"
+  }
+}
