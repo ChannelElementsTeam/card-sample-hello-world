@@ -1,2 +1,51 @@
-<link rel="import" href="viewer.html">
-<link rel="import" href="composer.html">
+<link rel="import" href="../polymer/polymer-element.html">
+
+<!-- This contains two web components:  one used while a user is composing a message using this card ("composer"),
+and a second one when each participant is viewing (and perhaps interacting with) the card in their channel feed ("viewer") -->
+
+<!--The composer in this case is trivial.  It contains a button that, when pressed, will ask the client to send
+a message to all participants.  -->
+
+<dom-module id="card-sample-hello-world-composer">
+  <template>
+    <div>
+      <button on-click="onSend">Hello World</button>
+    </div>
+  </template>
+  <script>
+    class CardSampleHelloWorldComposer extends Polymer.Element {
+      static get is() { return 'card-sample-hello-world-composer'; }
+      static get properties() {
+        return {
+          channel: Object
+        };
+      }
+      onSend() {
+        // The channel object is provided as one of the properties when the component is added to the page.
+        // The "composed" data to be sent and used to initialize all viewers is empty in this case because
+        // the viewers always display a "hello world" message regardless of how they are initialized.
+        this.channel.sendCard(this, { json: {} }, true, false);
+      }
+    }
+    window.customElements.define(CardSampleHelloWorldComposer.is, CardSampleHelloWorldComposer);
+  </script>
+</dom-module>
+
+<!--The viewer is also trivial.  Regardless of how it is initialized, it just displays "Hello world".-->
+<dom-module id="card-sample-hello-world-viewer">
+  <template>
+    <div>Hello world!</div>
+  </template>
+  <script>
+    class CardSampleHelloWorldViewer extends Polymer.Element {
+      static get is() { return 'card-sample-hello-world-viewer'; }
+      static get properties() {
+        return {
+          data: Object,
+          channel: Object
+        };
+      }
+    }
+    window.customElements.define(CardSampleHelloWorldViewer.is, CardSampleHelloWorldViewer);
+  </script>
+</dom-module>

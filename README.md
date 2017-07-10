@@ -1,2 +1,3 @@
 # card-sample-hello-world
-A sample-only Channels card component that demonstrates "hello world"
+
+A sample Channels card component demonstrating the basics
