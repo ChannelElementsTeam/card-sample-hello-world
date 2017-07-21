@@ -1,4 +1,15 @@
 {
   "composerTag": "card-sample-hello-world-composer",
-  "viewerTag": "card-sample-hello-world-viewer"
+  "viewerTag": "card-sample-hello-world-viewer",
+  "name": "Hello World Sample",
+  "categories": [
+    "samples/basic"
+  ],
+  "websiteUrl": "https://github.com/ChannelElementsTeam/card-sample-hello-world",
+  "description": "A sample card that just displays 'hello world' to participants",
+  "iconUrl": "images/icon.png",
+  "price": 0,
+  "requestsPayment": false,
+  "offersPayment": false,
+  "collaborative": false
 }
